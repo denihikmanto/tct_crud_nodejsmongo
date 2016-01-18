@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+	head
+		title Daftar #{ucfirst(collection)}
+		link(rel='stylesheet', href='http://#{baseurl}/css/bootstrap.min.css')		
+		body
+		h2.text-center DATA BUKU
+		hr
+		br
+		div().row
+			div().col-md-8.col-md-offset-2
+				if objects.length > 0
+					div.panel.panel-default
+						div.panel-body
+							table(data-role='table').table.table-responsive.table-striped
+								thead
+									tr
+										th='NO'
+										th='JUDUL'
+										th='PENGARANG'
+										th='TANGGAL TERBIT'
+								tbody
+									each obj,index in objects
+										tr
+											td=index+1
+											td
+												a(href='http://#{baseurl}/#{collection}/#{obj._id}', title='Lihat record ini') #{obj.JUDUL}
+											td
+												a(href='http://#{baseurl}/#{collection}/#{obj._id}', title='Lihat record ini') #{obj.PENGARANG}
+											td
+												a(href='http://#{baseurl}/#{collection}/#{obj._id}', title='Lihat record ini') #{obj.tglterbit}
+							a(role='button',href='http://#{baseurl}/#{collection}/new').btn.btn-success Tambah Data

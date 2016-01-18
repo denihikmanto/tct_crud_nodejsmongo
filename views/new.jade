@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+	head
+		title Daftar #{ucfirst(collection)}
+		link(rel='stylesheet', href='../css/bootstrap.min.css')
+		link(rel='stylesheet', href='../css/jquery-ui.css')
+		script(src='../css/jquery-1.9.1.js')
+		script(src='../css/jquery-ui.js')
+		script(src='../css/jquery-main.js')
+		style .btn {margin:10px 10px 10px 0px;}
+	body
+		#container
+			div.col-md-8.col-md-offset-2
+				div.panel.panel-default
+					div.panel-heading ISI DATA BUKU
+					div.panel-body
+						form(method='post', action='./')
+							div.form-group
+								label(for='JUDUL') JUDUL
+								input(type='text', name='JUDUL', id='JUDUL', placeholder='JUDUL' required).form-control
+							div.form-group
+								label(for='PENGARANG') PENGARANG
+								input(type='text', name='PENGARANG', id='PENGARANG', placeholder='PENGARANG' required).form-control
+							div.form-group
+								label(for='TGLTERBIT') TGL TERBIT
+								input(type='date' name='tglterbit', id='tglterbit', placeholder='TANGGAL TERBIT' required).form-control
+							input(type='submit', value='Tambahkan').btn.btn-success
+							a(href='/#{collection}', role='button').btn.btn-danger Batal

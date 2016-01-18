@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+	head
+		title Daftar #{ucfirst(collection)}
+		link(rel='stylesheet', href='../../css/bootstrap.min.css')
+		link(rel='stylesheet', href='../../css/jquery-ui.css')
+		script(src='../../css/jquery-1.9.1.js')
+		script(src='../../css/jquery-ui.js')
+		script(src='../../css/jquery-main.js')
+		style .btn {margin:10px 10px 10px 0px;}
+	body
+		#container
+			- var obj = objects
+			div.col-md-8.col-md-offset-2
+				div.panel.panel-default
+					div.panel-heading
+						Ubah Data Mahasiswa
+					div.panel-body
+						form(method='post', action='')
+							div.form-group
+								label(for='JUDUL') JUDUL
+								input(type='text', name='JUDUL', id='JUDUL', value='#{obj.JUDUL}').form-control
+							div.form-group
+								label(for='PENGARANG') PENGARANG
+								input(type='text', name='PENGARANG', id='PENGARANG', value='#{obj.PENGARANG}').form-control
+							div.form-group
+								label(for='TGLTERBIT') TANGGAL TERBIT
+								input(type='text' name='tglterbit', id='tglterbit', value='#{obj.tglterbit}').form-control
+							div.form-group
+								input(type='submit', value='Ubah').btn.btn-warning
+								a(href='/#{collection}', role='button').btn.btn-danger Batal
